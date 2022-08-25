@@ -25,10 +25,6 @@ jobs:
     - name: Build with Maven
       run: |
            mvn -B package --file pom.xml
-           mvn sonar:sonar \
-              -Dsonar.projectKey=githubactions \
-             -Dsonar.host.url=http://localhost:9000 \
-             -Dsonar.login=6c3523558c92c55237ab049a5e6ce9144566d860
            mkdir artifacts && cp target/*.jar artifacts
            cd artifacts && ls
     - name: Save artifact 
